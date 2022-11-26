@@ -1,0 +1,20 @@
+def qualConjunto()
+    global Q
+    Q = int(input(Quantos dados ))
+    for elemento in range(0, Q)
+        conjunto.append(input(Escreva os dados ))
+    return conjunto
+def subConj1(subConj)
+    return subConj2([],subConj)
+
+def subConj2(current, conj)
+    if conj
+        return subConj2(current,conj[1]) + subConj2(current+[conj[0]],conj[1])
+    return [current]
+
+conjunto = []
+conj = conjunto
+qualConjunto()
+qtdSubConj = 2Q
+
+print(fOs subconjuntos são {sorted(subConj1(conj))})

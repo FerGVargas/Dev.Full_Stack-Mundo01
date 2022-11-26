@@ -1,0 +1,54 @@
+#Instalação das bibliotecas usada
+!pip install faker
+!pip install wordcloud
+!pip install num2words
+
+#Importação das bibliotecas usada
+import matplotlib.pyplot as plt
+from faker import Faker
+from wordcloud import WordCloud
+from num2words import num2words
+from datetime import datetime
+import numpy as np
+import pandas as pd
+
+#Listas que usei
+randomico= Faker('pt_BR')
+informacao= []
+notas= []
+nomes= []
+
+#Cria/Abre arquivo de texto para armazenar dados aleatórios criado com faker
+#Converter dados para gerar histograma e nuvem de palavras
+for i in range(25):
+    dados= ('RA: ' + randomico.name() + ' - ' + 'Nota: '  + str(randomico.random_int(1,10)))
+    informacao.append(dados)
+
+with open('Banco_dados.txt', 'w', encoding='utf-8') as arquivo:
+  for valor in informacao:
+    arquivo.write(valor +  '\n')
+
+with open('Banco_dados.txt', 'r', encoding='utf-8') as arquivo_recuperar:
+  for i in range (len(informacao)):
+        ler= arquivo_recuperar.readline() 
+        separar_notas= ler.split(' ')
+        nota= int(separar_notas[-1])
+        notas.append(nota) 
+        lista_nomes= num2words(nota, lang= 'pt_BR') 
+        nomes.append(lista_nomes) 
+        lista_nome_str= (' ').join(nomes)
+
+#Criando Histograma das Pontuações
+plt.title('Histograma das Pontuações')
+plt.xlabel('Pontuações')
+plt.ylabel('Probabilidade')
+plt.xlim(-0.5,10.5) 
+plt.hist(notas, bins=np.arange(-0.5,11), density=True, rwidth=0.75) 
+plt.show()
+
+#Criando Nuvem palavras
+nuvem_palavras = WordCloud(background_color='Black', width=700,height=500).generate(lista_nome_str)
+plt.imshow(nuvem_palavras, interpolation='Bilinear')
+plt.axis("off")
+plt.show()
+nuvem_palavras.to_file("Nuvem_palavras.png")
