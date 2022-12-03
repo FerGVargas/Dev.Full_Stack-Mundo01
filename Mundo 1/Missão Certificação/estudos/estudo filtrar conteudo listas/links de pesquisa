@@ -1,0 +1,16 @@
+source = lista
+result = filter(lambda item: item.isalpha(),source)
+
+
+Python - Filter, Map e Reduce com funções Lambda
+https://www.youtube.com/watch?v=UGY8A3px0vc
+
+Python - Introdução à função FILTER
+https://www.youtube.com/watch?v=askz4dAv2KE
+
+
+estudo __contains__
+ https://www.digitalocean.com/community/tutorials/python-string-contains
+
+ Performance comparisons(stackoverflow.com)
+ https://stackoverflow.com/questions/3437059/does-python-have-a-string-contains-substring-method

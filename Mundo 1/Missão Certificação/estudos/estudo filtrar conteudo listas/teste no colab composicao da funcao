@@ -1,0 +1,33 @@
+ #colab 
+ # celula 1 / Usar lista de retorno da função OpenReadXLSX da classe dadosXLSX(validandoClasseDados.py,pasta estudo excel)
+
+ 
+ ls=['DSK-JS,FERRAMENTA3,DeWalt ,220,MDOO-99,45,metricas', 'DJS-IW-90,FERRAMENTA1,Makita ,110,DOE-872,68,metricas',
+    'MMEI-W45,FERRAMENTA2,Bosch,220,DIEOW-3,44x9,pesagem', 'EUW-993,FERRAMENTA4,DeWalt ,220,SOW0,65X6,pesagem', 
+    'DIXOW,FERRAMENTA5,Dexter,110,SPW-WX,67,metricas']
+    
+# celula 2 / estudo do resultado e testes com split
+
+var1=ls[0]
+print(ls[0])
+print(var1.split(','))
+
+# celula 3 / contains()
+
+
+        def contains(s, other):
+           return s.__contains__(other)
+           
+# celula 4 / teste da função __contains__ retornando uma lista
+
+for item in ls:
+
+  l1=item.split(',')
+  print(l1[0],',',l1[1])
+   
+  if contains(l1[0],'9'):
+    print('achou ->',l1[0])
+    print(item)
+ 
+     
+ 

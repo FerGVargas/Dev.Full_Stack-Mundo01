@@ -1,0 +1,2 @@
+criar o arq => 'pip freeze > requirements. txt'
+instalando => 'pip install -r requirements. txt'

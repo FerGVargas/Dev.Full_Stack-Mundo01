@@ -1,0 +1,1 @@
+necessário instalar a biblioteca openpyxl

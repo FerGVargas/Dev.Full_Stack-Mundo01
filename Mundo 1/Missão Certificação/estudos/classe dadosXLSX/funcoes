@@ -1,0 +1,7 @@
+getPathPlanilhas : usada para adaptar o path de acesso as planilhas e imagens
+openpyXL         : verifica se existe a planilha caso sim abre caso contrario cria 
+createInsertXLSX : insere lista da dados para planilha
+OpenReadXLSX     : retorna lista onde cada item é uma linha da planilha 
+getList          : retorna a primeira coluna da pasta selecionada
+OpenFindDateXLSX : retornar um determinado item(em testes)
+
