@@ -51,6 +51,7 @@ while True:
         print('Responda apenas s ou n!')
     if choice == 'N':
         break
+        
 costFood = Graficos(food,'Alimentação', days)
 costTransport = Graficos(Transport,'Transporte',days)
 costLockerRoom = Graficos(lockerRoom,'Vestimenta',days)
