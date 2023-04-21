@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenando valores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+<body>
+    <header>
+        <nav class="navbar-expand">
+            <ul class="navbar-nav">
+                <li><a style="margin:10px" href="./ordenando.html" class="btn btn-primary">Ordenando</a></li>
+                <li><a style="margin:10px" href="../Receitas/receitas.html" class="btn btn-secondary">Receitas</a></li>
+                <li><a style="margin:10px" href="../Usuarios/usuarios.html" class="btn btn-secondary">Usuários</a></li>
+            </ul>
+        </nav>
+        <hr>
+    </header> 
+   
+    <main style="margin:30px">
+    <h1>Ordenando Valores</h1>
+        <form action="ordenando.html" method="dialog">
+            <label>Valor</label>
+            <br>
+            <input class="form-control"  id="valor" type="number">
+            <br><br> 
+            <button class="btn btn-primary" type = "submit" onclick="add()">Adicionar</button> 
+            <button class="btn btn-primary" type = "submit" onclick="limpar()">Limpar</button>
+            <hr>
+        <select id="selecao" class="form-select" label="Bubble Sort"> <!-- Codigo para seleção -->
+            <option value="0">Bubble Sort</option> 
+            <option value="1">Selection Sort</option>
+            <option value="2">Quick Sort</option>
+        </select> <!-- Botoes de Ordenar e Misturar -->
+            <br><br>
+            <button class="btn btn-primary" onclick="ordenar()">Ordenar</button> 
+            <button class="btn btn-primary" onclick="misturar()">Misturar</button>
+            <hr> 
+            <div> <!-- Lista de numeros -->
+                <ul id="valores"></ul> 
+            </div>
+        </form>   
+        <!-- Codigo JavaScript -->
+        <script src="ordenando.js"></script>
+    </body>
+</html>

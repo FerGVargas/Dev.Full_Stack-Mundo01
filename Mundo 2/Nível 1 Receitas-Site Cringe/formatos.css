@@ -1,0 +1,163 @@
+@charset "UTF-8"; /* carregar as configurações padroes */
+
+/* -- Variaveis -- */
+
+:root { /*variaveis usado para padronizar as msmas informações nas paginas*/
+    --cor-bg-principal: rgb(238, 167, 139); /* Salmão de fundo*/
+    --cor-bg-alternativa: rgb(39, 38, 38); /* Preto das barras cabeçalho*/
+    --cor-bg-rodape: black; /* Preto das barras rodape*/
+    --cor-fonte-principal: grey; /* Cor cinza das letras*/
+    --cor-fonte-alternativa: white; /* Cor branca quando acessadas*/
+    /*--tipo-font: Arial; /* fontes globais*/
+}
+
+/* -- Seletor universal -- */
+
+* {
+    size: calc(100vh-100px); /*calculo dimensão */
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    margin: 0%;
+    
+
+}
+
+/* -- Tela Home -- */
+
+body{ /*todo o corpo*/
+    background-color: var(--cor-bg-principal) !important; /* Cor de fundo salão */
+    text-align: center; /* Texto alinhado ao centro*/
+    overflow-y: auto; /* barra de rolagem na vertical*/
+    margin: 0%; /* espaçamento html */
+   
+}
+
+.navbar { /*configurações do menu*/
+    display: flex; /* opções lado a lado */
+    gap: 20px; /* distanciamento das opções*/
+    justify-content: left; /* justificado a esquerda */
+    background-color: var(--cor-bg-alternativa); /* Cor preta do menu */
+    padding: 15px; /* altura do menu */
+}
+
+main { /*corpo paginas*/
+    overflow: auto; /* barra de rolagem na vertical*/
+    display: flex; /* opções lado a lado */
+    flex-wrap: wrap; /* quebra de linha nos itens da mesma linha */
+    justify-content: space-evenly; /* itens distribuídos igualmente no espaço*/
+}
+
+section {
+    margin-top: 100px;
+    text-align: center;
+}
+
+
+.link { /*links do menu*/
+    font-family: var(--cor-fonte-principal); /* tipos de fontes da variavel */
+    font-size: 20px; /*tamanho da fonte*/
+    color: var(--cor-fonte-principal); /*cor cinza da fonte quando nao selecionada */
+    text-decoration: none; /*retirado o sublinhado abaixo dos links*/
+}
+
+.link:hover { /*:hover para distacar quando selecionado*/
+    background-color: var(--cor-bg-alternativa); /*fundo preto no menu*/
+    color: var(--cor-fonte-alternativa); /*fonte fica branca quando selecionada*/
+    text-decoration: none;
+}
+
+.logotipo{ /*logotipo do site book*/
+    width: 50px;  /*largura da linha*/ 
+    height: 50px; /*altura da linha*/
+    /*display: flex; /* opções lado a lado */
+    margin: 50px; /*colado ao final do html*/
+}
+
+/* -- Tela Receitas -- */
+
+.card {
+    background: rgba(255, 255, 255, 0.781);
+    width: 400px; /*tamanho da largura caixa receitas*/
+    height: 600px; /*tamanho da altura caixa receitas*/
+    margin: 10px;
+    border-radius: 15px;
+    padding: 15px;
+}
+
+.card-imagem {
+    height: 300px;
+    background-size: cover;
+    border-radius: 5px;
+    
+}
+
+.receita-1 {
+    background-image: url(imagens/arroz_couve_flor.jpg);
+
+}
+.receita-2 {
+    background-image: url(imagens/bolo_cafe.jpg);
+
+}
+.receita-3 {
+    background-image: url(imagens/coxinha_brigadeiro.jpg);
+}
+
+.titulo-receitas {
+    margin: 10px;
+    font-size: 24px;
+    font-family: var(--tipo-font);
+    text-align: center;
+    margin-bottom: 10px;
+}
+.ingredientes {
+    list-style-position: outside;
+    margin-bottom: 10px;
+    text-align: left;
+
+}
+#linha {
+    width: 350px;
+    border: 1px solid;
+    color: grey;
+    margin-bottom: 10px;
+}
+
+ /*-- Tela Cadastro -- */
+ 
+.cadastro {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.titulo {
+    font-family: var(--tipo-font) !important;
+    color: var(--cor-fonte-alternativa);
+}
+
+.botao {
+    background-color: var(--cor-bg-alternativa);
+    color: var(--cor-fonte-alternativa);
+
+}
+
+/*-- Rodapé -- */
+
+.rodape h3{ 
+    background-color: var(--cor-bg-rodape); 
+    font-size: 18px;
+    text-align: center; 
+    color: var(--cor-fonte-alternativa); 
+    position: fixed; 
+    bottom: 0%;  
+    width: 100%; 
+    margin: 0%;
+    
+}
+
+
+
+
+
+
