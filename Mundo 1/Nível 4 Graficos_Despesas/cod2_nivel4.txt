@@ -1,0 +1,63 @@
+import numpy as np
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+from sklearn.datasets import make_regression
+
+class Graficos:
+    def __init__(self,expense,name,days):
+        self.expense = expense
+        self.name = name
+        self.days = days
+
+    def DemonstrarGrafico(self):
+        x = np.array(self.days).reshape(-1, 1)
+        regressao = LinearRegression().fit(x, self.expense)
+        angular_coeff = regressao.coef_
+        linear_coeff = regressao.intercept_
+        plt.plot(self.days, linear_coeff + angular_coeff * self.days, label='Regressão Linear', color='blue')
+        plt.plot(self.days, self.expense, label=f'{self.name}', marker='o', color='purple')
+        plt.title(f'Despesas de {self.name}')
+        plt.ylabel('Despesas em R$')
+        plt.xlabel('Dia')
+        plt.legend(loc=2)
+        plt.show() 
+
+    def GraficoDespesas(self):
+        plt.plot(self.days, food, label='Alimentação', color='orange', marker='s')
+        plt.plot(self.days, lockerRoom, label='Vestuario', color='blue', marker='p')
+        plt.plot(self.days, Transport, label='Transporte', color='green', marker='D')
+        plt.title('Gráfico de Despesas')
+        plt.ylabel('Despesa em R$')
+        plt.xlabel('Dia')
+        plt.legend()
+        plt.show()
+
+        sorted(days)
+
+days =       []
+lockerRoom = []
+Transport =  []
+food =       []
+
+while True:
+    days.append(int(input('Informar o dia: ')))
+    food.append(float(input('Custo com Alimentação R$: ')))
+    lockerRoom.append(float(input('Custo com Vestuário R$: ')))
+    Transport.append(float(input('Custo com Transporte R$: ')))
+    while True:
+        choice = str(input('Deseja continuar? [s/n] ')).strip().upper()[0]
+        if choice in 'SN':
+            break
+        print('Responda apenas s ou n!')
+    if choice == 'N':
+        break
+        
+costFood = Graficos(food,'Alimentação', days)
+costTransport = Graficos(Transport,'Transporte',days)
+costLockerRoom = Graficos(lockerRoom,'Vestimenta',days)
+
+costFood.GraficoDespesas()
+costFood.DemonstrarGrafico()
+costTransport.DemonstrarGrafico()
+costLockerRoom.DemonstrarGrafico()
+
