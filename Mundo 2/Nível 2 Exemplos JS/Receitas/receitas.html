@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> <!-- Bootstrap -->
         <link rel="shortcut icon" href="imagens/logo.ico" type="image/ico">
         <title>Receitas</title>
     </head>
-    <style>
+    <style> /* CSS */
         main{
             background-color: goldenrod; 
         }
@@ -28,7 +28,7 @@
 
     </style>
     <body>
-        <header>
+        <header> <!-- Menu -->
             <nav class="navbar-expand bg-body-secondary">
                 <ul class="navbar-nav">
                     <li><a href="../Ordenando/ordenando.html" class="btn btn-secondary">Ordenando</a></li>
@@ -42,7 +42,7 @@
             <div id="pnlCatalogo" class="d-flex flex-wrap justify-content-center py-5"></div>
         </main>
 
-        <script> 
+        <script> // JSON
             let receita = [ 
             {   "titulo": "Arroz de Couve-Flor",
                 "imagem": "./imagens/arroz_couve_flor.jpg",
@@ -61,14 +61,14 @@
             }
         ]
 
-        function getListaIngredientes(receita) {
+        function getListaIngredientes(receita){
             const lista = receita.ingredientes
                 .map(ingrediente => `<li class='mb-1'>${ingrediente}</li>`)
                 .reduce((acumulador, item) => acumulador + item, "<ul class='mb-4'>") + "</ul>"
                     return lista
         }
 
-        function getCard(receita) {
+        function getCard(receita){
             return `
             <div class="card">
                 <img src="${receita.imagem}" class="card-img-top" alt="${receita.titulo}">
@@ -83,7 +83,7 @@
             </div>`;
         }
 
-        function preencheCatalogo() {
+        function preencheCatalogo(){
         const html = receita
             .map(receita => getCard(receita))
             .reduce((acumulador, item) => acumulador + item, "")
@@ -92,6 +92,5 @@
         onload = preencheCatalogo()
 
         </script>
-        
     </body>
 </html>
